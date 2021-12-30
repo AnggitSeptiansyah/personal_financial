@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="box box-success" style="margin-top: 20px">
+  <div class="box box-danger" style="margin-top: 20px">
     <div class="box-header with-border">
       <h3 class="box-title">{{ __('Income Type') }}</h3> 
+      <div class="pull-right">
+        <a href="{{ route('expense_types.create') }}" class="btn btn-danger">{{ __('Add new expense type') }}</a>
+      </div>
     </div>
     <div class="box-body">
       <table class="table table-bordered">
@@ -15,13 +18,13 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($income_types as $income_type)
+          @foreach ($expenseTypes as $expenseType)
           <tr>
               <td>{{ $loop->iteration }}</td>
-              <td>{{ $task->title }}</td>
+              <td>{{ $expenseType->name }}</td>
               <td>
-                <a class="btn btn-sm btn-primary" href="{{ route('admin.checklists.tasks.edit', [$checklist, $task]) }}">{{ __('Edit') }}</a>
-                <form action="{{ route('admin.checklists.tasks.destroy', [$checklist, $task]) }}" method="post" style="display: inline-block">
+                <a class="btn btn-sm btn-primary" href="{{ route('expense_types.edit', $expenseType) }}">{{ __('Edit') }}</a>
+                <form action="{{ route('expense_types.destroy', $expenseType) }}" method="post" style="display: inline-block">
                   @method('delete')
                   @csrf
                   <button class="btn btn-sm btn-danger" type="submit"

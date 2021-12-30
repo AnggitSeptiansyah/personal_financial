@@ -22,7 +22,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="{{ route('expense_types.index') }}">
             <i class="fa fa-plus"></i> <span>{{ __('Expense Types')}}</span>
           </a>
         </li>
