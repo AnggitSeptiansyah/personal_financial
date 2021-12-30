@@ -4,18 +4,26 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">{{ __('MANAGE CHECKLISTS') }}</li>
-        
-
-        <li style="padding: 12px 0 !important">
+        <li>
           <a href="">
-            <i class="fa fa-plus-circle"></i> <span>{{ __('New checklist group')}}</span>
+            <i class="fa fa-credit-card-alt"></i> <span>{{ __('Income')}}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('income_types.index') }}">
+            <i class="fa fa-plus-circle"></i> <span>{{ __('Income Types')}}</span>
           </a>
         </li>
 
-        <li class="header">{{ __('Customer') }}</li>
+        <li class="header">{{ __('Expenses') }}</li>
         <li>
           <a href="">
-            <i class="fa fa-users"></i> <span>{{ __('Customer')}}</span>
+            <i class="fa fa-money"></i> <span>{{ __('Expenses')}}</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-plus"></i> <span>{{ __('Expense Types')}}</span>
           </a>
         </li>
 

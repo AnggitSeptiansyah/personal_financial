@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IncomeTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Income Type
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('income_types', IncomeTypeController::class);
+});

@@ -17,7 +17,7 @@ class CreateIncomesTable extends Migration
             $table->id();
             $table->foreignId('income_type_id')->constrained();
             $table->text('description');
-            $table->integer('amount');
+            $table->bigInteger('amount');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,7 +15,11 @@ class CreateExpensesTable extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('expense_type_id')->constrained();
+            $table->text('description');
+            $table->bigInteger('amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
