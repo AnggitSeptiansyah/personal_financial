@@ -11,7 +11,7 @@ class Income extends Model
     use HasFactory, SoftDeletes;
     protected $fillable = ['income_type_id', 'description', 'amount'];
 
-    public function income_type()
+    public function incomeType()
     {
         return $this->belongsTo(IncomeType::class);
     }

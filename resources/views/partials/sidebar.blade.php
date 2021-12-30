@@ -5,7 +5,7 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">{{ __('MANAGE CHECKLISTS') }}</li>
         <li>
-          <a href="">
+          <a href="{{ route('incomes.index') }}">
             <i class="fa fa-credit-card-alt"></i> <span>{{ __('Income')}}</span>
           </a>
         </li>

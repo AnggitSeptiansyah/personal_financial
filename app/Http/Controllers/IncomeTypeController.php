@@ -74,7 +74,7 @@ class IncomeTypeController extends Controller
     public function update(IncomeTypeRequest $request, IncomeType $incomeType)
     {
         $incomeType->update($request->validated());
-        return redirect()->route('income_types.index')->with('success', 'Income type has been added');
+        return redirect()->route('income_types.index')->with('success', 'Income type has been updated');
     }
 
     /**
@@ -83,8 +83,9 @@ class IncomeTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(IncomeType $incomeType)
     {
-        //
+        $incomeType->delete();
+        return redirect()->route('income_types.index')->with('success', 'Income type has been added');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeTypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Income Type
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('income_types', IncomeTypeController::class);
+    Route::resource('income_types', IncomeTypeController::class)->except('show');
+    Route::resource('incomes', IncomeController::class);
 });
