@@ -17,7 +17,7 @@
 
         <li class="header">{{ __('Expenses') }}</li>
         <li>
-          <a href="">
+          <a href="{{ route('expenses.index') }}">
             <i class="fa fa-money"></i> <span>{{ __('Expenses')}}</span>
           </a>
         </li>

@@ -3,18 +3,19 @@
 @section('content')
   <div class="box box-primary" style="margin-top: 20px">
     <div class="box-header with-border">
-      <h3 class="box-title">{{ __('Add Income') }}</h3>
+      <h3 class="box-title">{{ __('Edit Expense Data') }}</h3>
     </div>
 
     <!-- form start -->
-    <form role="form" action="{{ route('incomes.store') }}" method="post">
+    <form role="form" action="{{ route('expenses.update', $expense) }}" method="post">
+      @method('put')
       @csrf
       <div class="box-body">
         <div class="form-group">
           <label>Select</label>
-          <select class="form-control" name="income_type_id">
-            @foreach ($incomeTypes as $incomeType)
-              <option value="{{ $incomeType->id }}">{{ $incomeType->name }}</option>
+          <select class="form-control" name="expense_type_id">
+            @foreach ($expensesType as $expenseType)
+              <option value="{{ $expenseType->id }}">{{ $expenseType->name }}</option>
             @endforeach
           </select>
           @error('income_type_id')
@@ -24,15 +25,15 @@
         <div class="form-group">
           <label for="exampleInputEmail1">{{ __('Description') }}</label>
           <span class="text-danger">*</span>
-          <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" value="{{ old('description') }}">{{ __('input the description') }}</textarea>
-            @error('name')
+          <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" placeholder="{{ __('Input the description') }}">{{ old('description', $expense->description) }}</textarea>
+            @error('description')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">{{ __('Amount') }}</label>
           <span class="text-danger">*</span>
-          <input type="numeric" class="form-control @error('amount') is-invalid @enderror" id="amount" name="amount" value="{{ old('amount') }}" placeholder="{{ __('input the amount') }}">
+          <input type="numeric" class="form-control @error('amount') is-invalid @enderror" id="amount" name="amount" value="{{ old('amount', $expense->amount) }}" placeholder="{{ __('input the amount') }}">
             @error('amount')
                 <div class="text-danger">{{ $message }}</div>
             @enderror

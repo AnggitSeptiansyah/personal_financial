@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseTypeController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeTypeController;
@@ -29,4 +30,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('income_types', IncomeTypeController::class)->except('show');
     Route::resource('incomes', IncomeController::class)->except('show');
     Route::resource('expense_types', ExpenseTypeController::class);
+    Route::resource('expenses', ExpenseController::class);
 });

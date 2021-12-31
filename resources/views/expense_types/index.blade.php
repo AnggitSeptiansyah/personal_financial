@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="box box-danger" style="margin-top: 20px">
+  <div class="box box-primary" style="margin-top: 20px">
     <div class="box-header with-border">
-      <h3 class="box-title">{{ __('Income Type') }}</h3> 
+      <h3 class="box-title">{{ __('Expense Type') }}</h3> 
       <div class="pull-right">
-        <a href="{{ route('expense_types.create') }}" class="btn btn-danger">{{ __('Add new expense type') }}</a>
+        <a href="{{ route('expense_types.create') }}" class="btn btn-primary">{{ __('Add new expense type') }}</a>
       </div>
     </div>
     <div class="box-body">
