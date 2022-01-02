@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseTypeController;
 use App\Http\Controllers\IncomeController;
@@ -31,4 +32,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('incomes', IncomeController::class)->except('show');
     Route::resource('expense_types', ExpenseTypeController::class);
     Route::resource('expenses', ExpenseController::class);
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });

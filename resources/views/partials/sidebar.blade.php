@@ -3,7 +3,12 @@
   <section class="sidebar">
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">{{ __('MANAGE CHECKLISTS') }}</li>
+        <li>
+          <a href="{{ route('dashboard.index') }}">
+            <i class="fa fa-credit-card-alt"></i> <span>{{ __('Dashboard')}}</span>
+          </a>
+        </li>
+        <li class="header">{{ __('Income') }}</li>
         <li>
           <a href="{{ route('incomes.index') }}">
             <i class="fa fa-credit-card-alt"></i> <span>{{ __('Income')}}</span>
