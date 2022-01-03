@@ -16,7 +16,7 @@ class ExpenseFactory extends Factory
         return [
             'expense_type_id' => $this->faker->numberBetween(1, 3),
             'description' => $this->faker->sentence(),
-            'amount' => $this->faker->numberBetween(2000, 10000)
+            'amount' => $this->faker->numberBetween(2000, 5000)
         ];
     }
 }

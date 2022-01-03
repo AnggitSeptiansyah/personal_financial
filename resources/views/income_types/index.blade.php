@@ -3,9 +3,9 @@
 @section('content')
   <div class="box box-success" style="margin-top: 20px">
     <div class="box-header with-border">
-      <h3 class="box-title">{{ __('Income Type') }}</h3>
+      <h3 class="box-title">{{ __('Jenis Pendapatan') }}</h3>
       <div class="pull-right">
-        <a href="{{ route('income_types.create') }}" class="btn btn-success">{{ __('Add Income Type') }}</a>
+        <a href="{{ route('income_types.create') }}" class="btn btn-success">{{ __('Tambah jenis pendapatan') }}</a>
       </div>
     </div>
     <div class="box-body">

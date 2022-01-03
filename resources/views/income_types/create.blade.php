@@ -3,7 +3,7 @@
 @section('content')
   <div class="box box-primary" style="margin-top: 20px">
     <div class="box-header with-border">
-      <h3 class="box-title">{{ __('Add Income Type') }}</h3>
+      <h3 class="box-title">{{ __('Tambah jenis pendapatan') }}</h3>
     </div>
 
     <!-- form start -->
@@ -11,9 +11,9 @@
       @csrf
       <div class="box-body">
         <div class="form-group">
-          <label for="exampleInputEmail1">{{ __('Name') }}</label>
+          <label for="exampleInputEmail1">{{ __('Nama') }}</label>
           <span class="text-danger">*</span>
-          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="{{ __('Input income type name') }}" value="{{ old('name') }}">
+          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="{{ __('Masukkan nama jenis pendapatan') }}" value="{{ old('name') }}">
             @error('name')
                 <div class="text-danger">{{ $message }}</div>
             @enderror

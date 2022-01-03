@@ -7,9 +7,9 @@
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>150</h3>
+          <h3>{{ number_format($incomeThisMonth) }}</h3>
 
-          <p>Income this month</p>
+          <p>Pendapatan</p>
         </div>
         <div class="icon">
           <i class="ion ion-bag"></i>
@@ -22,9 +22,9 @@
       <!-- small box -->
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{ number_format($expenseThisMonth) }}<sup style="font-size: 20px"></h3>
 
-          <p>Expense this month</p>
+          <p>Pengeluaran</p>
         </div>
         <div class="icon">
           <i class="ion ion-stats-bars"></i>
@@ -37,9 +37,9 @@
       <!-- small box -->
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>44</h3>
+          <h3> - </h3>
 
-          <p>Balance</p>
+          <p>Persentase</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
@@ -52,9 +52,9 @@
       <!-- small box -->
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{ $profit }}</h3>
 
-          <p>Balance Percentage</p>
+          <p>Laba / Rugi</p>
         </div>
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
@@ -63,5 +63,46 @@
       </div>
     </div>
     <!-- ./col -->
-  </div>  
+  </div>
+
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Monthly Chart</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>
+    </div>
+    <div class="box-body">
+      <div class="chart">
+        <canvas id="lineChart" style="height: 241px; width: 492px;" height="241" width="492"></canvas>
+      </div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Jenis Pengeluaran Terbanyak</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>
+    </div>
+    <div class="box-body">
+      <div class="chart">
+        <canvas id="lineChart" style="height: 241px; width: 492px;" height="241" width="492"></canvas>
+      </div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+@endsection
+
+@section('scripts')
+  <script src="{{ asset('bower_components/chart.js/Chart.js') }}"></script>
+  <script src="{{ asset('js/profit_chart.js') }}"></script>
 @endsection

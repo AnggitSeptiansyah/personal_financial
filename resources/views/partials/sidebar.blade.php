@@ -11,29 +11,26 @@
         <li class="header">{{ __('Income') }}</li>
         <li>
           <a href="{{ route('incomes.index') }}">
-            <i class="fa fa-credit-card-alt"></i> <span>{{ __('Income')}}</span>
+            <i class="fa fa-credit-card-alt"></i> <span>{{ __('Pendapatan')}}</span>
           </a>
         </li>
         <li>
           <a href="{{ route('income_types.index') }}">
-            <i class="fa fa-plus-circle"></i> <span>{{ __('Income Types')}}</span>
+            <i class="fa fa-plus-circle"></i> <span>{{ __('Jenis Pendapatan')}}</span>
           </a>
         </li>
 
         <li class="header">{{ __('Expenses') }}</li>
         <li>
           <a href="{{ route('expenses.index') }}">
-            <i class="fa fa-money"></i> <span>{{ __('Expenses')}}</span>
+            <i class="fa fa-money"></i> <span>{{ __('Pengeluaran')}}</span>
           </a>
         </li>
         <li>
           <a href="{{ route('expense_types.index') }}">
-            <i class="fa fa-plus"></i> <span>{{ __('Expense Types')}}</span>
+            <i class="fa fa-plus"></i> <span>{{ __('Jenis Pengeluaran')}}</span>
           </a>
         </li>
-
-        {{-- Pages --}}
-        <li class="header">{{ __('PAGES') }}</li>
     </ul>
   </section>
   <!-- /.sidebar -->

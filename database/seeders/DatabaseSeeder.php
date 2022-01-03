@@ -21,3 +21,5 @@ class DatabaseSeeder extends Seeder
         $this->call(IncomeSeeder::class);
     }
 }
+
+// DB::table('expenses')->whereRaw('month(created_at)', $data)->get()
