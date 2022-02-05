@@ -25,7 +25,7 @@ class IncomeController extends Controller
     }
 
     public function store(IncomeRequest $request)
-    {
+    {   
         Income::create($request->validated());
         return redirect()->route('incomes.index')->with('success', 'Income data has been added');
     }

@@ -7,7 +7,11 @@
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>{{ number_format($incomeThisMonth) }}</h3>
+              @if (!$incomeThisMonth) 
+                <h3>0</h3>
+              @else
+                <h3>{{ number_format($incomeThisMonth) }}</h3>
+              @endif
 
           <p>Pendapatan</p>
         </div>
