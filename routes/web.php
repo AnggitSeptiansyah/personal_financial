@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseTypeController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeTypeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +26,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Income Type
 Route::group(['middleware' => 'auth'], function () {
@@ -33,4 +34,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('expense_types', ExpenseTypeController::class);
     Route::resource('expenses', ExpenseController::class);
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::resource('change_password', ChangePasswordController::class)->only('edit', 'update');
 });
