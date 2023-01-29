@@ -17,8 +17,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = auth()->id;
-        return view('auth.passwords.change', compact($user));
+        // 
     }
 
     /**

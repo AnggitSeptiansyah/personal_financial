@@ -5,7 +5,7 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li>
           <a href="{{ route('dashboard.index') }}">
-            <i class="fa fa-credit-card-alt"></i> <span>{{ __('Dashboard')}}</span>
+            <i class="fa fa-dashboard"></i> <span>{{ __('Dashboard')}}</span>
           </a>
         </li>
         <li class="header">{{ __('Income') }}</li>
@@ -29,6 +29,17 @@
         <li>
           <a href="{{ route('expense_types.index') }}">
             <i class="fa fa-plus"></i> <span>{{ __('Jenis Pengeluaran')}}</span>
+          </a>
+        </li>
+        <li class="header">{{ __('Hutang & Piutang') }}</li>
+        <li>
+          <a href="{{ route('debts.index') }}">
+            <i class="fa fa-money"></i> <span>{{ __('Hutang')}}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('receivables.index') }}">
+            <i class="fa fa-plus"></i> <span>{{ __('Piutang')}}</span>
           </a>
         </li>
     </ul>

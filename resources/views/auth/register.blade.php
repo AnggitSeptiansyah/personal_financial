@@ -30,17 +30,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-            </div>
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control @error('website') is-invalid @enderror" name="website" value="{{ old('website') }}" placeholder="{{ __('Input your website') }}" >
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                
-                @error('website')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
+            </div>            
             <div class="form-group has-feedback">
                 <input type="password"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
@@ -61,7 +51,7 @@
             </div>
         </form>
 
-        <a href="{{ route('login') }}" class="text-center">Login</a>
+        Do you already have an account ? Click <a href="{{ route('login') }}" class="text-center">Login</a>
     </div>
     <!-- /.form-box -->
 </div>

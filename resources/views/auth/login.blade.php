@@ -27,14 +27,6 @@
         @enderror
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-            </label>
-          </div>
-        </div>
-        <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Login') }}</button>
         </div>
@@ -43,12 +35,6 @@
     </form>
     
     <!-- /.social-auth-links -->
-    @if (Route::has('password.request'))
-        <a class="text-center" href="{{ route('password.request') }}">
-            {{ __('Forgot Your Password?') }}
-        </a><br>
-    @endif
-    <a href="{{ route('register') }}" class="text-center">Register new user</a>
   </div>  
 </div>
 @endsection

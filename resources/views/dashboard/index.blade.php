@@ -43,7 +43,7 @@
         <div class="inner">
           <h3> - </h3>
 
-          <p>Persentase</p>
+          <p>Hutang</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
